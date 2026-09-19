@@ -15,6 +15,22 @@ The root [`edgez.json`](edgez.json) is the shared EdgeZ project manifest. It poi
 declarative [`appwrite.config.json`](appwrite.config.json), which the deploy button applies after
 project selection, and records the mobile and firmware workspace locations.
 
+The deploy button, CI, and Codex should all execute the same deterministic
+Appwrite CLI engine; AI does not interpret the manifest into API calls:
+
+```sh
+export APPWRITE_PROJECT_ID="<PROJECT_ID>"
+export APPWRITE_API_KEY="<API_KEY>"
+scripts/deploy-appwrite.sh plan
+scripts/deploy-appwrite.sh compare
+scripts/deploy-appwrite.sh apply
+```
+
+`apply` refuses a dirty worktree and records the Git commit, config digest,
+target project, timestamp, and CLI version in an ignored local deployment
+receipt. The checked-in config is the version-controlled desired state;
+`compare` reports drift against Appwrite.
+
 ## Run locally
 
 Install the JavaScript dependencies once:

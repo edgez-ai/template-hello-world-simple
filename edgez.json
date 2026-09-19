@@ -2,6 +2,11 @@
   "version": 1,
   "name": "hello-world-simple",
   "appwriteConfig": "appwrite.config.json",
+  "deploymentEngine": {
+    "name": "appwrite-cli",
+    "schemaVersion": 1,
+    "script": "scripts/deploy-appwrite.sh"
+  },
   "deployments": [
     {
       "id": "web",
