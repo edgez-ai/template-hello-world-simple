@@ -1,6 +1,7 @@
 {
   "version": 1,
   "name": "hello-world-simple",
+  "appwriteConfig": "appwrite.config.json",
   "deployments": [
     {
       "id": "web",

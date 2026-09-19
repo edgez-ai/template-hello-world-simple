@@ -1,0 +1,21 @@
+{
+  "projectId": "<PROJECT_ID>",
+  "endpoint": "https://appwrite.edgez.ai/v1",
+  "sites": [
+    {
+      "$id": "hello-world-simple",
+      "name": "Hello World Simple",
+      "framework": "nextjs",
+      "buildRuntime": "node-24",
+      "adapter": "static",
+      "path": "site",
+      "enabled": true,
+      "logging": true,
+      "timeout": 30,
+      "installCommand": "npm ci",
+      "buildCommand": "npm run build",
+      "outputDirectory": "out",
+      "vars": []
+    }
+  ]
+}

@@ -11,9 +11,9 @@ A minimal multi-platform starter that displays **Hello World** in three places:
 Open `hello-world-simple.code-workspace` in VS Code to work with all three
 projects together.
 
-The root [`edgez.json`](edgez.json) is the shared EdgeZ project manifest. It declares the
-deployable web site and records the mobile and firmware workspace locations. The deploy button
-uses this file, so its URL only needs the GitHub repository address.
+The root [`edgez.json`](edgez.json) is the shared EdgeZ project manifest. It points to the
+declarative [`appwrite.config.json`](appwrite.config.json), which the deploy button applies after
+project selection, and records the mobile and firmware workspace locations.
 
 ## Run locally
 
