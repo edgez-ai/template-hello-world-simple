@@ -6,7 +6,7 @@ A minimal multi-platform starter that displays **Hello World** in three places:
 - `app/` — an Expo + React Native app
 - `firmware/` — Heltec WiFi LoRa 32 V3 firmware for the onboard OLED
 
-[![Deploy on EdgeZ](https://img.shields.io/badge/Deploy%20on-EdgeZ-6c5ce7?style=for-the-badge)](https://appwrite.edgez.ai/deploy?repo=https%3A%2F%2Fgithub.com%2Fedgez-ai%2Ftemplate-hello-world-simple)
+[![Deploy on EdgeZ](https://img.shields.io/badge/Deploy%20on-EdgeZ-6c5ce7?style=for-the-badge)](https://appwrite.edgez.ai/console/deploy?repo=https%3A%2F%2Fgithub.com%2Fedgez-ai%2Ftemplate-hello-world-simple)
 
 Open `hello-world-simple.code-workspace` in VS Code to work with all three
 projects together.
