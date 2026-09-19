@@ -1,6 +1,7 @@
 {
   "folders": [
     { "name": "Hello World Simple", "path": "." },
+    { "name": "Infrastructure", "path": "infra" },
     { "name": "Web", "path": "site" },
     { "name": "React Native", "path": "app" },
     { "name": "Heltec Firmware", "path": "firmware" }

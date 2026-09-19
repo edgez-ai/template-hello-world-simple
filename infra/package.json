@@ -1,0 +1,16 @@
+{
+  "name": "edgez-appwrite-infra",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "plan": "node plan.mjs",
+    "compare": "node compare.mjs",
+    "install:solution": "node install.mjs",
+    "uninstall:solution": "node uninstall.mjs",
+    "check": "node --check appwrite.mjs && node --check plan.mjs && node --check compare.mjs && node --check install.mjs && node --check uninstall.mjs"
+  },
+  "dependencies": {
+    "appwrite-cli": "27.3.0"
+  }
+}

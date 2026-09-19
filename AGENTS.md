@@ -18,7 +18,7 @@ other product behavior unless explicitly requested.
 | `firmware/` | PlatformIO + ESP-IDF Heltec OLED firmware |
 | `edgez.json` | EdgeZ deployment and workspace manifest |
 | `appwrite.config.json` | Declarative Appwrite infrastructure and code deployment plan |
-| `scripts/deploy-appwrite.sh` | Deterministic Appwrite CLI plan, drift comparison, and apply engine |
+| `infra/` | Deterministic Node.js install, uninstall, and drift engine using the pinned Appwrite CLI |
 | `README.md` | Setup and validation guide |
 
 ## Validation
@@ -31,7 +31,11 @@ other product behavior unless explicitly requested.
 EdgeZ Android DevTools client at `127.0.0.1:5555`. Do not run a local Gradle or
 Expo native build unless the user explicitly requests one.
 
-Do not translate `appwrite.config.json` into ad-hoc API calls. Use
-`scripts/deploy-appwrite.sh` so humans, CI, and agents run the same deterministic
-Appwrite CLI engine. Run `plan`, then `compare`, then `apply`. Keep stable
-resource IDs in the config and commit configuration changes before applying.
+Do not translate `appwrite.config.json` into ad-hoc API calls. Use the commands
+in `infra/` so humans, CI, and agents run the same deterministic Appwrite CLI
+engine. Run `npm run plan`, then `npm run compare`, then
+`npm run install:solution` from that directory. Keep stable resource IDs in the
+config and commit configuration changes before installing.
+`npm run uninstall:solution` is destructive and must only run with explicit
+authorization; it removes declared resources but preserves users and unrelated
+project resources.

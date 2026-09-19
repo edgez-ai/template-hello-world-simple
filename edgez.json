@@ -5,7 +5,9 @@
   "deploymentEngine": {
     "name": "appwrite-cli",
     "schemaVersion": 1,
-    "script": "scripts/deploy-appwrite.sh"
+    "directory": "infra",
+    "install": "npm run install:solution",
+    "uninstall": "npm run uninstall:solution"
   },
   "deployments": [
     {

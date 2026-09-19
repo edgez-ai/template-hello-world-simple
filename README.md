@@ -16,20 +16,26 @@ declarative [`appwrite.config.json`](appwrite.config.json), which the deploy but
 project selection, and records the mobile and firmware workspace locations.
 
 The deploy button, CI, and Codex should all execute the same deterministic
-Appwrite CLI engine; AI does not interpret the manifest into API calls:
+Node.js engine in `infra/`. It invokes a pinned Appwrite CLI; AI does not
+interpret the manifest into API calls:
 
 ```sh
 export APPWRITE_PROJECT_ID="<PROJECT_ID>"
 export APPWRITE_API_KEY="<API_KEY>"
-scripts/deploy-appwrite.sh plan
-scripts/deploy-appwrite.sh compare
-scripts/deploy-appwrite.sh apply
+cd infra
+npm install
+npm run plan
+npm run compare
+npm run install:solution
 ```
 
-`apply` refuses a dirty worktree and records the Git commit, config digest,
+`install` refuses a dirty worktree and records the Git commit, config digest,
 target project, timestamp, and CLI version in an ignored local deployment
 receipt. The checked-in config is the version-controlled desired state;
-`compare` reports drift against Appwrite.
+`compare` reports drift against Appwrite. To remove only resources declared by
+the solution, preview `INFRA_DRY_RUN=1 npm run uninstall:solution`, then run
+`npm run uninstall:solution` with explicit authorization. Users and unrelated
+project resources are preserved.
 
 ## Run locally
 
