@@ -16,6 +16,7 @@ other product behavior unless explicitly requested.
 | `site/` | Next.js web page |
 | `app/` | Expo + React Native app |
 | `firmware/` | PlatformIO + ESP-IDF Heltec OLED firmware |
+| `edgez.json` | EdgeZ deployment and workspace manifest |
 | `README.md` | Setup and validation guide |
 
 ## Validation
