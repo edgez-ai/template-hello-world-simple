@@ -14,6 +14,8 @@ projects together.
 The root [`edgez.json`](edgez.json) is the shared EdgeZ project manifest. It points to the
 declarative [`appwrite.config.json`](appwrite.config.json), which the deploy button applies after
 project selection, and records the mobile and firmware workspace locations.
+The `buildInstance` field accepts `tiny`, `small`, `medium`, or `large`; this template defaults to
+`tiny` for all Site and Function builds.
 
 The deploy button, CI, and Codex should all execute the same deterministic
 Node.js engine in `infra/`. It invokes a pinned Appwrite CLI; AI does not
